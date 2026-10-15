@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biz Haqimizda — MiniCarCollectionUz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldHover: '#AA820A',
+                            red: '#E50914',
+                            dark: '#0B0D12',
+                            card: '#131722',
+                            border: '#2A3042'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0D12;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(19, 23, 34, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-4px);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0D12; }
+        ::-webkit-scrollbar-thumb { background: #2A3042; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-black">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-black via-brand-card to-black text-xs text-gray-300 border-b border-brand-border/40 py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="hidden md:inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                Telegram Kanalimizda Yangi Kolleksiya Qabul Qilinmoqda!
+            </span>
+            <div class="flex items-center gap-4 mx-auto md:mx-0 font-medium">
+                <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="hover:text-brand-gold transition flex items-center gap-1">
+                    <i class="fab font-bold fa-telegram text-sky-400"></i> @MiniCarCollectionUz
+                </a>
+                <span class="text-gray-600">|</span>
+                <span><i class="fas fa-shield-alt text-brand-gold mr-1"></i> 100% Original Die-Cast</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-brand-border/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-gold to-yellow-700 flex items-center justify-center text-black font-orbitron font-black text-xl shadow-lg group-hover:scale-105 transition">
+                        MCC
+                    </div>
+                    <div>
+                        <span class="font-orbitron font-black text-xl tracking-wider block text-white group-hover:text-brand-gold transition">
+                            MINICAR<span class="text-brand-gold">.UZ</span>
+                        </span>
+                        <span class="text-[10px] text-gray-400 tracking-widest uppercase block -mt-1">
+                            Diecast Premium Hub
+                        </span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="index.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-home text-xs"></i> Bosh sahifa
+                    </a>
+                    <a href="catalog.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-car text-xs"></i> Katalog
+                    </a>
+                    <a href="about.html" class="text-brand-gold font-semibold flex items-center gap-1.5 border-b-2 border-brand-gold pb-1">
+                        <i class="fas fa-info-circle text-xs"></i> Biz haqimizda
+                    </a>
+                    <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fab fa-telegram-plane text-xs text-sky-400"></i> Telegram Kanal
+                    </a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="cart.html" class="relative p-2.5 text-gray-300 hover:text-brand-gold rounded-lg hover:bg-white/5 transition">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-dark">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB & HERO HEADER -->
+    <div class="py-16 bg-gradient-to-b from-brand-card/60 to-transparent border-b border-brand-border/40 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-4">
+            <span class="text-brand-gold font-orbitron text-xs uppercase tracking-widest block">// Bizning Falsafamiz</span>
+            <h1 class="font-orbitron font-black text-3xl sm:text-5xl text-white">MINICARCOLLECTIONUZ HAQIDA</h1>
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+                Biz shunchaki avtomobil modellarini sotmaymiz — biz avtomobilsozlik tarixining muhrlangan san'at asarlarini va kolleksiya zavqini yetkazamiz.
+            </p>
+        </div>
+    </div>
+
+    <!-- MAIN ABOUT CONTENT -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+            
+            <!-- Story & Philosophy Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="bg-brand-gold/10 text-brand-gold border border-brand-gold/30 text-xs font-bold font-orbitron px-3 py-1 rounded-full uppercase">
+                        Premium Diler
+                    </span>
+                    <h2 class="font-orbitron font-black text-3xl text-white">O'zbekistonda №1 Kolleksion Hub</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        MiniCarCollectionUz loyihasi avtomobil ixlosmandlari va kolleksionerlari uchun maxsus tashkil etilgan. Katalogimizdagi har bir model dunyoning yetakchi ishlab chiqaruvchilari: <strong>Autoart, Kyosho, BBR Models, MakeUp Co., Norev va Minichamps</strong> tomonidan rasmiy litsenziya ostida tayyorlangan.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Biz mijozlarimizga faqatgina aslini (100% Original Die-Cast & Resin) taqdim etamiz. Zararlanishlarning oldini olish uchun har bir mahsulot maxsus zarbga chidamli premium idishlarda xavfsiz yetkazib beriladi.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="glass-panel p-8 rounded-3xl border border-brand-gold/30 relative overflow-hidden space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-gold/20 flex items-center justify-center text-brand-gold text-2xl border border-brand-gold/40">
+                                <i class="fab fa-telegram-plane"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron font-bold text-lg text-white">Telegram Hamjamiyatimiz</h3>
+                                <p class="text-xs text-gray-400">@MiniCarCollectionUz</p>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Telegram kanalimizda har kuni yangi kelgan eksklyuziv modellar, auksionlar va maxsus zakazlar e'lon qilib boriladi. Hamjamiyatimizga qo'shiling va nodir nusxalarni birinchilardan bo'lib qo'lga kiriting!
+                        </p>
+
+                        <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="w-full py-3.5 bg-sky-500 hover:bg-sky-600 text-white font-bold font-orbitron text-xs uppercase rounded-xl transition flex items-center justify-center gap-2 block text-center">
+                            <i class="fab fa-telegram"></i> Telegram Kanalga A'zo Bo'lish
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div>
+                <h3 class="font-orbitron font-black text-2xl text-white text-center mb-12">// BIZNING AFZALLIKLARIMIZ</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3">
+                        <div class="w-12 h-12 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center mx-auto text-xl border border-brand-gold/30">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4 class="font-orbitron font-bold text-white text-sm">100% Original Sifat</h4>
+                        <p class="text-xs text-gray-400">Faqatgina litsenziyalangan brendlar va zavod qadoqlaridagi original modellar.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3">
+                        <div class="w-12 h-12 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center mx-auto text-xl border border-brand-gold/30">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h4 class="font-orbitron font-bold text-white text-sm">Xavfsiz Qadoqlash</h4>
+                        <p class="text-xs text-gray-400">Har bir buyurtma ko'p qatlamli himoya va maxsus qutida yetkaziladi.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3">
+                        <div class="w-12 h-12 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center mx-auto text-xl border border-brand-gold/30">
+                            <i class="fas fa-truck-loading"></i>
+                        </div>
+                        <h4 class="font-orbitron font-bold text-white text-sm">Tezkor Yetkazish</h4>
+                        <p class="text-xs text-gray-400">Toshkent va O'zbekiston viloyatlari bo'ylab ishonchli kuryerlik xizmati.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-3">
+                        <div class="w-12 h-12 bg-brand-gold/10 text-brand-gold rounded-xl flex items-center justify-center mx-auto text-xl border border-brand-gold/30">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="font-orbitron font-bold text-white text-sm">Individual Zakaz</h4>
+                        <p class="text-xs text-gray-400">Chet el auksionlaridan istalgan kamyoob modelni buyurtmaga keltirib berish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ SECTION -->
+            <div class="max-w-3xl mx-auto space-y-6">
+                <h3 class="font-orbitron font-black text-2xl text-white text-center mb-8">// KENG TARQALGAN SAVOLLAR (FAQ)</h3>
+
+                <div class="space-y-4">
+                    <div class="glass-panel rounded-xl p-5 cursor-pointer" onclick="toggleFaq(1)">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-orbitron font-bold text-sm text-white">Modellar rostdan ham originalmi?</h4>
+                            <i id="faq-icon-1" class="fas fa-chevron-down text-brand-gold transition-transform"></i>
+                        </div>
+                        <p id="faq-ans-1" class="text-xs text-gray-400 mt-3 hidden leading-relaxed">
+                            Barcha modellar zavodning rasmiy seriya raqamlari va sertifikatlari bilan keladi. Biz soxta (replica) mahsulotlar bilan ishlamaymiz.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel rounded-xl p-5 cursor-pointer" onclick="toggleFaq(2)">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-orbitron font-bold text-sm text-white">Viloyatlarga yetkazib berish bormi?</h4>
+                            <i id="faq-icon-2" class="fas fa-chevron-down text-brand-gold transition-transform"></i>
+                        </div>
+                        <p id="faq-ans-2" class="text-xs text-gray-400 mt-3 hidden leading-relaxed">
+                            Ha, O'zbekistonning barcha viloyat va shaharlariga ekspress kuryerlik xizmatlari orqali yetkazib beriladi.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel rounded-xl p-5 cursor-pointer" onclick="toggleFaq(3)">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-orbitron font-bold text-sm text-white">Aloxida zakazga model keltirsa bo'ladimi?</h4>
+                            <i id="faq-icon-3" class="fas fa-chevron-down text-brand-gold transition-transform"></i>
+                        </div>
+                        <p id="faq-ans-3" class="text-xs text-gray-400 mt-3 hidden leading-relaxed">
+                            Ha! Agar siz izlayotgan model katalogimizda bo'lmasa, Telegram botimiz orqali administratorimizga murojaat qiling va Yevropa hamda Yaponiya auksionlaridan zakaz qiling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-sm border-t border-brand-border/60 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
+            <p>&copy; 2026 MiniCarCollectionUz. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            if(ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('mcc_cart') || '[]');
+            const badge = document.getElementById('cart-badge');
+            if(badge) {
+                badge.innerText = cart.reduce((acc, item) => acc + item.quantity, 0);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+        });
+    </script>
+</body>
+</html>

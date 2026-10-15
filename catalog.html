@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Katalogi — MiniCarCollectionUz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldHover: '#AA820A',
+                            red: '#E50914',
+                            dark: '#0B0D12',
+                            card: '#131722',
+                            border: '#2A3042'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0D12;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(19, 23, 34, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(212, 175, 55, 0.2);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0D12; }
+        ::-webkit-scrollbar-thumb { background: #2A3042; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        .custom-checkbox:checked {
+            background-color: #D4AF37;
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-black">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-black via-brand-card to-black text-xs text-gray-300 border-b border-brand-border/40 py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="hidden md:inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                Telegram Kanalimizda Yangi Kolleksiya Qabul Qilinmoqda!
+            </span>
+            <div class="flex items-center gap-4 mx-auto md:mx-0 font-medium">
+                <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="hover:text-brand-gold transition flex items-center gap-1">
+                    <i class="fab font-bold fa-telegram text-sky-400"></i> @MiniCarCollectionUz
+                </a>
+                <span class="text-gray-600">|</span>
+                <span><i class="fas fa-shield-alt text-brand-gold mr-1"></i> 100% Original Die-Cast</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-brand-border/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-gold to-yellow-700 flex items-center justify-center text-black font-orbitron font-black text-xl shadow-lg group-hover:scale-105 transition">
+                        MCC
+                    </div>
+                    <div>
+                        <span class="font-orbitron font-black text-xl tracking-wider block text-white group-hover:text-brand-gold transition">
+                            MINICAR<span class="text-brand-gold">.UZ</span>
+                        </span>
+                        <span class="text-[10px] text-gray-400 tracking-widest uppercase block -mt-1">
+                            Diecast Premium Hub
+                        </span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="index.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-home text-xs"></i> Bosh sahifa
+                    </a>
+                    <a href="catalog.html" class="text-brand-gold font-semibold flex items-center gap-1.5 border-b-2 border-brand-gold pb-1">
+                        <i class="fas fa-car text-xs"></i> Katalog
+                    </a>
+                    <a href="about.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-info-circle text-xs"></i> Biz haqimizda
+                    </a>
+                    <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fab fa-telegram-plane text-xs text-sky-400"></i> Telegram Kanal
+                    </a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="cart.html" class="relative p-2.5 text-gray-300 hover:text-brand-gold rounded-lg hover:bg-white/5 transition">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-dark">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB & HEADER -->
+    <div class="py-10 bg-brand-card/40 border-b border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 text-xs text-gray-400 mb-2">
+                        <a href="index.html" class="hover:text-brand-gold">Bosh sahifa</a>
+                        <i class="fas fa-chevron-right text-[10px]"></i>
+                        <span class="text-brand-gold">Katalog</span>
+                    </div>
+                    <h1 class="font-orbitron font-black text-3xl sm:text-4xl text-white">EKSKLYUZIV MODELLAR KATALOGI</h1>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="relative w-full md:w-80">
+                    <input type="text" id="search-input" placeholder="Model yoki brend nomini yozing..." class="w-full bg-black/60 border border-brand-border rounded-xl px-4 py-3 pl-11 text-sm text-white focus:outline-none focus:border-brand-gold transition">
+                    <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CATALOG CONTENT -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- SIDEBAR FILTERS (4 Cols) -->
+                <aside class="lg:col-span-3 space-y-6">
+                    <div class="glass-panel p-6 rounded-2xl space-y-6">
+                        
+                        <div class="flex items-center justify-between border-b border-brand-border/40 pb-4">
+                            <h3 class="font-orbitron font-bold text-white text-base flex items-center gap-2">
+                                <i class="fas fa-sliders-h text-brand-gold"></i> Filtrlar
+                            </h3>
+                            <button onclick="resetFilters()" class="text-xs text-gray-400 hover:text-brand-gold transition">
+                                Tozalash
+                            </button>
+                        </div>
+
+                        <!-- Scale Filter -->
+                        <div>
+                            <h4 class="font-orbitron font-semibold text-xs text-brand-gold uppercase tracking-wider mb-3">Masshtab</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="1:18" class="scale-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>1:18 (Eksklyuziv Large)</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="1:24" class="scale-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>1:24 (Klassik)</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="1:43" class="scale-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>1:43 (Kompakt Premium)</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="1:64" class="scale-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>1:64 (Mini GT / Hot Wheels)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Brand Filter -->
+                        <div class="border-t border-brand-border/40 pt-4">
+                            <h4 class="font-orbitron font-semibold text-xs text-brand-gold uppercase tracking-wider mb-3">Brendlar</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="Autoart" class="brand-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>Autoart</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="Kyosho" class="brand-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>Kyosho</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="BBR Models" class="brand-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>BBR Models</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="MakeUp Co." class="brand-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>MakeUp Co.</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="Norev" class="brand-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>Norev</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Material Filter -->
+                        <div class="border-t border-brand-border/40 pt-4">
+                            <h4 class="font-orbitron font-semibold text-xs text-brand-gold uppercase tracking-wider mb-3">Material</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="Die-Cast Metal" class="material-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>Die-Cast Metal</span>
+                                </label>
+                                <label class="flex items-center gap-3 text-sm text-gray-300 cursor-pointer hover:text-white">
+                                    <input type="checkbox" value="Resin" class="material-checkbox rounded border-brand-border text-brand-gold focus:ring-0 bg-black/50">
+                                    <span>Resin Premium</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button onclick="applyFilters()" class="w-full py-3 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold font-orbitron text-xs uppercase rounded-xl hover:brightness-110 transition">
+                            Filtrni Qo'llash
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- PRODUCTS DISPLAY (9 Cols) -->
+                <main class="lg:col-span-9 space-y-6">
+                    
+                    <!-- Top Bar: Result Count & Sorting -->
+                    <div class="glass-panel p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <span class="text-xs text-gray-400">
+                            Jami topildi: <strong id="result-count" class="text-brand-gold font-orbitron">0</strong> ta model
+                        </span>
+
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-gray-400">Saralash:</span>
+                            <select id="sort-select" onchange="sortProducts()" class="bg-black/60 border border-brand-border text-xs text-white rounded-lg px-3 py-2 focus:outline-none focus:border-brand-gold">
+                                <option value="default">Odatiy</option>
+                                <option value="price-asc">Narx: Arzondan qimmatga</option>
+                                <option value="price-desc">Narx: Qimmatdan arzonga</option>
+                                <option value="name-asc">Nomi bo'yicha (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- JS Dynamic Injection -->
+                    </div>
+
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK VIEW MODAL -->
+    <div id="quickview-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel max-w-2xl w-full rounded-2xl p-6 relative border border-brand-gold/40">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="quickview-content" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <!-- JS Dynamic Modal Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-sm border-t border-brand-border/60 pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
+            <p>&copy; 2026 MiniCarCollectionUz. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Expanded Database
+        const allProducts = [
+            { id: 1, name: "Porsche 911 GT3 RS", brand: "Autoart", scale: "1:18", material: "Die-Cast Metal", price: 2450000, oldPrice: 2800000, image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=800&q=80", stock: 2, desc: "Ajoyib detallashgan original Autoart brendi Porsche modeli." },
+            { id: 2, name: "Lamborghini Aventador SVJ", brand: "Kyosho", scale: "1:18", material: "Resin", price: 3100000, oldPrice: 3500000, image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80", stock: 1, desc: "Nodir kolleksion Lamborghini SVJ modeli." },
+            { id: 3, name: "Ferrari F40 Rosso Corsa", brand: "BBR Models", scale: "1:18", material: "Resin", price: 4200000, oldPrice: 4600000, image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80", stock: 3, desc: "Afsonaviy Ferrari F40 ning BBR modelidagi mukammal nusxasi." },
+            { id: 4, name: "Nissan GT-R R35 Nismo", brand: "MakeUp Co.", scale: "1:43", material: "Resin", price: 1850000, oldPrice: 2100000, image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80", stock: 4, desc: "Yaponiyaning MakeUp kompaniyasidan yuqori aniqlikdagi Nissan GT-R." },
+            { id: 5, name: "Mercedes-AMG GT Black Series", brand: "Norev", scale: "1:24", material: "Die-Cast Metal", price: 1250000, oldPrice: 1500000, image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80", stock: 5, desc: "Eshiklari va kapoti ochiluvchi Mercedes AMG." },
+            { id: 6, name: "BMW M5 CS Frozen Deep Green", brand: "Kyosho", scale: "1:18", material: "Die-Cast Metal", price: 2900000, oldPrice: 3200000, image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80", stock: 2, desc: "Muxlislar sevgan BMW M5 CS Kyosho model to'plamida." }
+        ];
+
+        let filteredProducts = [...allProducts];
+
+        function formatMoney(amount) {
+            return amount.toLocaleString('uz-UZ') + " UZS";
+        }
+
+        function renderCatalog(products) {
+            const container = document.getElementById('catalog-grid');
+            document.getElementById('result-count').innerText = products.length;
+
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-16 text-center text-gray-400">
+                        <i class="fas fa-search-minus text-4xl text-brand-gold mb-3"></i>
+                        <p class="font-orbitron font-bold text-lg text-white">Hech qanday model topilmadi</p>
+                        <p class="text-xs">Iltimos filtr parametrlarini o'zgartirib ko'ring.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = products.map(p => `
+                <div class="glass-card rounded-2xl p-5 relative flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 w-full rounded-xl overflow-hidden bg-black/40 mb-4 flex items-center justify-center">
+                            <span class="absolute top-2 left-2 z-10 bg-brand-gold text-black text-[10px] font-bold font-orbitron px-2.5 py-0.5 rounded">
+                                ${p.scale}
+                            </span>
+                            <button onclick="openQuickView(${p.id})" class="absolute top-2 right-2 z-10 bg-black/70 hover:bg-brand-gold hover:text-black text-white p-2 rounded-lg transition text-xs">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <img src="${p.image}" alt="${p.name}" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                            <span class="text-brand-gold font-semibold uppercase">${p.brand}</span>
+                            <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded">${p.material}</span>
+                        </div>
+
+                        <h3 class="font-orbitron font-bold text-white text-sm mb-2 line-clamp-1 group-hover:text-brand-gold transition">
+                            ${p.name}
+                        </h3>
+                    </div>
+
+                    <div class="pt-4 border-t border-brand-border/40 mt-2">
+                        <div class="mb-3">
+                            <span class="text-xs text-gray-400 line-through block">${formatMoney(p.oldPrice)}</span>
+                            <span class="font-orbitron font-bold text-base text-brand-gold">${formatMoney(p.price)}</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="product.html?id=${p.id}" class="py-2.5 bg-white/5 hover:bg-white/10 text-white font-medium text-xs text-center rounded-lg transition font-orbitron">
+                                Tafsilot
+                            </a>
+                            <button onclick="addToCart(${p.id})" class="py-2.5 bg-brand-gold hover:bg-yellow-600 text-black font-bold text-xs rounded-lg transition font-orbitron flex items-center justify-center gap-1">
+                                <i class="fas fa-cart-plus"></i> Savatga
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filtering Logic
+        function applyFilters() {
+            const selectedScales = Array.from(document.querySelectorAll('.scale-checkbox:checked')).map(cb => cb.value);
+            const selectedBrands = Array.from(document.querySelectorAll('.brand-checkbox:checked')).map(cb => cb.value);
+            const selectedMaterials = Array.from(document.querySelectorAll('.material-checkbox:checked')).map(cb => cb.value);
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+            filteredProducts = allProducts.filter(p => {
+                const matchScale = selectedScales.length === 0 || selectedScales.includes(p.scale);
+                const matchBrand = selectedBrands.length === 0 || selectedBrands.includes(p.brand);
+                const matchMaterial = selectedMaterials.length === 0 || selectedMaterials.includes(p.material);
+                const matchSearch = p.name.toLowerCase().includes(searchTerm) || p.brand.toLowerCase().includes(searchTerm);
+                return matchScale && matchBrand && matchMaterial && matchSearch;
+            });
+
+            sortProducts();
+        }
+
+        // Sorting Logic
+        function sortProducts() {
+            const val = document.getElementById('sort-select').value;
+            if (val === 'price-asc') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (val === 'price-desc') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            } else if (val === 'name-asc') {
+                filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+            }
+            renderCatalog(filteredProducts);
+        }
+
+        function resetFilters() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            document.getElementById('search-input').value = '';
+            filteredProducts = [...allProducts];
+            renderCatalog(filteredProducts);
+        }
+
+        // Quick View Modal
+        function openQuickView(id) {
+            const p = allProducts.find(item => item.id === id);
+            if (!p) return;
+
+            const modal = document.getElementById('quickview-modal');
+            const content = document.getElementById('quickview-content');
+
+            content.innerHTML = `
+                <div class="h-64 rounded-xl overflow-hidden bg-black/50">
+                    <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-3">
+                    <span class="text-xs text-brand-gold font-orbitron uppercase">${p.brand} • ${p.scale}</span>
+                    <h3 class="font-orbitron font-bold text-xl text-white">${p.name}</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">${p.desc}</p>
+                    <div class="pt-2">
+                        <span class="font-orbitron font-bold text-xl text-brand-gold">${formatMoney(p.price)}</span>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <button onclick="addToCart(${p.id}); closeQuickView();" class="w-full py-3 bg-brand-gold text-black font-bold font-orbitron text-xs uppercase rounded-xl hover:bg-yellow-600 transition">
+                            Savatga Qo'shish
+                        </button>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickview-modal').classList.add('hidden');
+        }
+
+        // Cart Sync
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('mcc_cart') || '[]');
+            const badge = document.getElementById('cart-badge');
+            if(badge) {
+                const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+                badge.innerText = totalCount;
+            }
+        }
+
+        function addToCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('mcc_cart') || '[]');
+            const product = allProducts.find(p => p.id === productId);
+
+            if(product) {
+                const existingIndex = cart.findIndex(item => item.id === productId);
+                if(existingIndex > -1) {
+                    cart[existingIndex].quantity += 1;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                localStorage.setItem('mcc_cart', JSON.stringify(cart));
+                updateCartBadge();
+                alert(`"${product.name}" savatga qo'shildi!`);
+            }
+        }
+
+        // URL Search Params Check
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const scaleParam = urlParams.get('scale');
+            if (scaleParam) {
+                const cb = document.querySelector(`.scale-checkbox[value="${scaleParam}"]`);
+                if (cb) cb.checked = true;
+            }
+            applyFilters();
+            updateCartBadge();
+
+            document.getElementById('search-input').addEventListener('input', applyFilters);
+        });
+    </script>
+</body>
+</html>

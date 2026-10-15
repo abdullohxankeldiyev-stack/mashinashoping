@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Tafsilotlari — MiniCarCollectionUz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldHover: '#AA820A',
+                            red: '#E50914',
+                            dark: '#0B0D12',
+                            card: '#131722',
+                            border: '#2A3042'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0D12;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(19, 23, 34, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-4px);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0D12; }
+        ::-webkit-scrollbar-thumb { background: #2A3042; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-black">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-black via-brand-card to-black text-xs text-gray-300 border-b border-brand-border/40 py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="hidden md:inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                Telegram Kanalimizda Yangi Kolleksiya Qabul Qilinmoqda!
+            </span>
+            <div class="flex items-center gap-4 mx-auto md:mx-0 font-medium">
+                <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="hover:text-brand-gold transition flex items-center gap-1">
+                    <i class="fab font-bold fa-telegram text-sky-400"></i> @MiniCarCollectionUz
+                </a>
+                <span class="text-gray-600">|</span>
+                <span><i class="fas fa-shield-alt text-brand-gold mr-1"></i> 100% Original Die-Cast</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-brand-border/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-gold to-yellow-700 flex items-center justify-center text-black font-orbitron font-black text-xl shadow-lg group-hover:scale-105 transition">
+                        MCC
+                    </div>
+                    <div>
+                        <span class="font-orbitron font-black text-xl tracking-wider block text-white group-hover:text-brand-gold transition">
+                            MINICAR<span class="text-brand-gold">.UZ</span>
+                        </span>
+                        <span class="text-[10px] text-gray-400 tracking-widest uppercase block -mt-1">
+                            Diecast Premium Hub
+                        </span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="index.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-home text-xs"></i> Bosh sahifa
+                    </a>
+                    <a href="catalog.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-car text-xs"></i> Katalog
+                    </a>
+                    <a href="about.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-info-circle text-xs"></i> Biz haqimizda
+                    </a>
+                    <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fab fa-telegram-plane text-xs text-sky-400"></i> Telegram Kanal
+                    </a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="cart.html" class="relative p-2.5 text-gray-300 hover:text-brand-gold rounded-lg hover:bg-white/5 transition">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-dark">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="py-6 border-b border-brand-border/40 bg-brand-card/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-xs text-gray-400">
+                <a href="index.html" class="hover:text-brand-gold">Bosh sahifa</a>
+                <i class="fas fa-chevron-right text-[10px]"></i>
+                <a href="catalog.html" class="hover:text-brand-gold">Katalog</a>
+                <i class="fas fa-chevron-right text-[10px]"></i>
+                <span id="breadcrumb-title" class="text-brand-gold font-semibold">Model Nomi</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAILS SECTION -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="product-container" class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Dynamic Content Hydrated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATED PRODUCTS SECTION -->
+    <section class="py-16 border-t border-brand-border/40 bg-brand-card/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="font-orbitron font-black text-2xl text-white mb-8">// SHUNGA O'XSHASH MODELLAR</h3>
+            <div id="related-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- JS Injected Related Models -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-sm border-t border-brand-border/60 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
+            <p>&copy; 2026 MiniCarCollectionUz. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const productsDatabase = [
+            {
+                id: 1,
+                name: "Porsche 911 GT3 RS",
+                brand: "Autoart",
+                scale: "1:18",
+                material: "Die-Cast Metal",
+                price: 2450000,
+                oldPrice: 2800000,
+                stock: 2,
+                color: "Lizard Green",
+                openingParts: "Eshiklar, Kapot, Bagaj",
+                images: [
+                    "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Autoart Composite Die-Cast seriyasidan Porsche 911 GT3 RS rusumli model. Har bir detal original avtomobil chizmalari asosida aniq 1:18 masshtabda yaratilgan. Ichki saloni real yumshoq qoplama va rul mexanizmi bilan boyitilgan."
+            },
+            {
+                id: 2,
+                name: "Lamborghini Aventador SVJ",
+                brand: "Kyosho",
+                scale: "1:18",
+                material: "Resin",
+                price: 3100000,
+                oldPrice: 3500000,
+                stock: 1,
+                color: "Giallo Tenerife (Yellow)",
+                openingParts: "Sealed Body (Ochilmaydi)",
+                images: [
+                    "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Kyosho brendining premium Resin kolleksiyasi. Aerodinamik unsurlar carbon fakturasida bajarilgan hamda eksklyuziv displey podstavkasi bilan taqdim etiladi."
+            },
+            {
+                id: 3,
+                name: "Ferrari F40 Rosso Corsa",
+                brand: "BBR Models",
+                scale: "1:18",
+                material: "Resin",
+                price: 4200000,
+                oldPrice: 4600000,
+                stock: 3,
+                color: "Rosso Corsa (Red)",
+                openingParts: "Sealed Body",
+                images: [
+                    "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Italiyaning afsonaviy BBR Models studio tomonidan cheklangan miqdorda ishlab chiqarilgan Ferrari F40. Sanoqli kolleksionerlarda mavjud bo'lgan haqiqiy javohir."
+            },
+            {
+                id: 4,
+                name: "Nissan GT-R R35 Nismo",
+                brand: "MakeUp Co.",
+                scale: "1:43",
+                material: "Resin",
+                price: 1850000,
+                oldPrice: 2100000,
+                stock: 4,
+                color: "Pearl White",
+                openingParts: "Sealed Body",
+                images: [
+                    "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80"
+                ],
+                description: "Yaponiya qo'l mehnati ustalaridan MakeUp Co. tamonidan yaratilgan Nissan GT-R R35 Nismo."
+            }
+        ];
+
+        function formatMoney(amount) {
+            return amount.toLocaleString('uz-UZ') + " UZS";
+        }
+
+        function loadProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id')) || 1;
+            const product = productsDatabase.find(p => p.id === productId) || productsDatabase[0];
+
+            document.title = `${product.name} — MiniCarCollectionUz`;
+            document.getElementById('breadcrumb-title').innerText = product.name;
+
+            const container = document.getElementById('product-container');
+            container.innerHTML = `
+                <!-- LEFT GALLERY (7 COLS) -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="glass-panel p-4 rounded-2xl relative overflow-hidden bg-black/50">
+                        <span class="absolute top-4 left-4 z-10 bg-brand-gold text-black text-xs font-bold font-orbitron px-3 py-1 rounded">
+                            ${product.scale}
+                        </span>
+                        <img id="main-product-img" src="${product.images[0]}" alt="${product.name}" class="w-full h-96 lg:h-[480px] object-contain rounded-xl">
+                    </div>
+
+                    <!-- Gallery Thumbnails -->
+                    <div class="flex gap-4 overflow-x-auto pb-2">
+                        ${product.images.map((img, idx) => `
+                            <button onclick="changeImage('${img}')" class="w-24 h-24 rounded-xl glass-card overflow-hidden border border-brand-border hover:border-brand-gold transition flex-shrink-0">
+                                <img src="${img}" class="w-full h-full object-cover">
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- RIGHT SPECS & ACTIONS (5 COLS) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel p-8 rounded-2xl space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold font-orbitron text-brand-gold uppercase tracking-widest">${product.brand}</span>
+                                <span class="text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
+                                    <i class="fas fa-check-circle mr-1"></i> Zaxirada: ${product.stock} dona
+                                </span>
+                            </div>
+                            <h1 class="font-orbitron font-black text-2xl lg:text-3xl text-white">${product.name}</h1>
+                        </div>
+
+                        <!-- Price Tag -->
+                        <div class="p-4 rounded-xl bg-black/40 border border-brand-border/60 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 line-through block">${formatMoney(product.oldPrice)}</span>
+                                <span class="font-orbitron font-black text-2xl text-brand-gold">${formatMoney(product.price)}</span>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 border border-brand-red/30 font-bold px-2.5 py-1 rounded font-orbitron">
+                                TEJASH: ${formatMoney(product.oldPrice - product.price)}
+                            </span>
+                        </div>
+
+                        <!-- Technical Specifications Grid -->
+                        <div class="space-y-3 text-xs border-y border-brand-border/40 py-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Masshtab:</span>
+                                <span class="text-white font-bold font-orbitron">${product.scale}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Material:</span>
+                                <span class="text-white font-semibold">${product.material}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Rangi:</span>
+                                <span class="text-white font-semibold">${product.color}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Ochiluvchi qismlar:</span>
+                                <span class="text-brand-gold font-semibold">${product.openingParts}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Holati:</span>
+                                <span class="text-emerald-400 font-semibold">Yangi (Brand New In Box)</span>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div>
+                            <h4 class="font-orbitron font-bold text-xs text-gray-300 uppercase mb-2">Tavsifi</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">${product.description}</p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-3 pt-2">
+                            <button onclick="addToCartDetails(${product.id})" class="w-full py-4 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold font-orbitron text-xs uppercase rounded-xl hover:brightness-110 transition flex items-center justify-center gap-2 shadow-lg">
+                                <i class="fas fa-shopping-bag text-base"></i> Savatga Qo'shish
+                            </button>
+                            <a href="cart.html" class="w-full py-4 glass-card text-white hover:text-brand-gold font-bold font-orbitron text-xs uppercase rounded-xl transition flex items-center justify-center gap-2 text-center">
+                                Hozir Buyurtma Qilish
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            renderRelatedProducts(product.id);
+        }
+
+        function changeImage(src) {
+            document.getElementById('main-product-img').src = src;
+        }
+
+        function renderRelatedProducts(currentId) {
+            const container = document.getElementById('related-products-grid');
+            const related = productsDatabase.filter(p => p.id !== currentId);
+
+            container.innerHTML = related.map(p => `
+                <div class="glass-card rounded-2xl p-4 relative flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-40 w-full rounded-xl overflow-hidden bg-black/40 mb-3">
+                            <img src="${p.images[0]}" alt="${p.name}" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                        </div>
+                        <span class="text-[10px] text-brand-gold font-orbitron uppercase block">${p.brand} • ${p.scale}</span>
+                        <h4 class="font-orbitron font-bold text-white text-xs mb-2 line-clamp-1">${p.name}</h4>
+                    </div>
+                    <div class="pt-2 border-t border-brand-border/40 flex items-center justify-between">
+                        <span class="font-orbitron font-bold text-xs text-brand-gold">${formatMoney(p.price)}</span>
+                        <a href="product.html?id=${p.id}" class="p-2 bg-white/5 hover:bg-brand-gold hover:text-black text-white rounded-lg transition text-xs">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCartDetails(productId) {
+            let cart = JSON.parse(localStorage.getItem('mcc_cart') || '[]');
+            const product = productsDatabase.find(p => p.id === productId);
+
+            if(product) {
+                const existingIndex = cart.findIndex(item => item.id === productId);
+                if(existingIndex > -1) {
+                    cart[existingIndex].quantity += 1;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                localStorage.setItem('mcc_cart', JSON.stringify(cart));
+                updateCartBadge();
+                alert(`"${product.name}" savatga muvaffaqiyatli qo'shildi!`);
+            }
+        }
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('mcc_cart') || '[]');
+            const badge = document.getElementById('cart-badge');
+            if(badge) {
+                const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+                badge.innerText = totalCount;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProductDetails();
+            updateCartBadge();
+        });
+    </script>
+</body>
+</html>

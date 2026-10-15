@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniCarCollectionUz — Eksklyuziv Kolleksion Model Mashinalar</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldHover: '#AA820A',
+                            red: '#E50914',
+                            dark: '#0B0D12',
+                            card: '#131722',
+                            border: '#2A3042'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0D12;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(19, 23, 34, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0D12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A3042;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Glowing Effects */
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+        .text-glow {
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Badge Pulses */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-gold selection:text-black">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-black via-brand-card to-black text-xs text-gray-300 border-b border-brand-border/40 py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="hidden md:inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                Telegram Kanalimizda Yangi Kolleksiya Qabul Qilinmoqda!
+            </span>
+            <div class="flex items-center gap-4 mx-auto md:mx-0 font-medium">
+                <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="hover:text-brand-gold transition flex items-center gap-1">
+                    <i class="fab font-bold fa-telegram text-sky-400"></i> @MiniCarCollectionUz
+                </a>
+                <span class="text-gray-600">|</span>
+                <span><i class="fas fa-shield-alt text-brand-gold mr-1"></i> 100% Original Die-Cast</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-brand-border/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-gold to-yellow-700 flex items-center justify-center text-black font-orbitron font-black text-xl shadow-lg group-hover:scale-105 transition">
+                        MCC
+                    </div>
+                    <div>
+                        <span class="font-orbitron font-black text-xl tracking-wider block text-white group-hover:text-brand-gold transition">
+                            MINICAR<span class="text-brand-gold">.UZ</span>
+                        </span>
+                        <span class="text-[10px] text-gray-400 tracking-widest uppercase block -mt-1">
+                            Diecast Premium Hub
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="index.html" class="text-brand-gold font-semibold flex items-center gap-1.5 border-b-2 border-brand-gold pb-1">
+                        <i class="fas fa-home text-xs"></i> Bosh sahifa
+                    </a>
+                    <a href="catalog.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-car text-xs"></i> Katalog
+                    </a>
+                    <a href="about.html" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fas fa-info-circle text-xs"></i> Biz haqimizda
+                    </a>
+                    <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1.5">
+                        <i class="fab fa-telegram-plane text-xs text-sky-400"></i> Telegram Kanal
+                    </a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center gap-4">
+                    <a href="catalog.html" class="p-2.5 text-gray-300 hover:text-brand-gold rounded-lg hover:bg-white/5 transition">
+                        <i class="fas fa-search text-lg"></i>
+                    </a>
+                    
+                    <a href="cart.html" class="relative p-2.5 text-gray-300 hover:text-brand-gold rounded-lg hover:bg-white/5 transition">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-dark">0</span>
+                    </a>
+
+                    <a href="catalog.html" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-semibold text-xs uppercase px-5 py-3 rounded-lg hover:brightness-110 transition shadow-lg font-orbitron">
+                        <i class="fas fa-th"></i> Barcha Modellar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] flex items-center justify-center pt-8 pb-16 overflow-hidden">
+        <!-- Background Gradients -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-gold/30 text-xs font-semibold text-brand-gold uppercase tracking-wider">
+                        <i class="fas fa-crown text-yellow-400"></i> O'zbekistondagi №1 Die-Cast Hub
+                    </div>
+
+                    <h1 class="font-orbitron font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+                        EKSKLYUZIV <br>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-gold via-yellow-200 to-amber-500 text-glow">
+                            KOLLEKSION
+                        </span> 
+                        MODELLAR
+                    </h1>
+
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        1:18, 1:24, 1:43 va 1:64 masshtabdagi dunyoga mashhur <strong>Autoart, Kyosho, BBR, Hot Wheels Elite</strong> brendlarining premium model mashinalari to'plami. Uyingiz va ofisingiz uchun haqiqiy san'at asari.
+                    </p>
+
+                    <!-- Hero Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="catalog.html" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold font-orbitron text-sm uppercase rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition duration-300 flex items-center justify-center gap-3">
+                            <i class="fas fa-car-side"></i> Katalogga O'tish
+                        </a>
+                        <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="w-full sm:w-auto px-8 py-4 glass-card text-white hover:text-brand-gold font-medium text-sm rounded-xl hover:border-brand-gold/50 transition flex items-center justify-center gap-3">
+                            <i class="fab fa-telegram text-sky-400 text-lg"></i> Telegram Kanalimiz
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-brand-border/40">
+                        <div>
+                            <span class="font-orbitron font-bold text-2xl text-white block">500+</span>
+                            <span class="text-xs text-gray-400">Mavjud Modellar</span>
+                        </div>
+                        <div>
+                            <span class="font-orbitron font-bold text-2xl text-brand-gold block">100%</span>
+                            <span class="text-xs text-gray-400">Original Sifat</span>
+                        </div>
+                        <div>
+                            <span class="font-orbitron font-bold text-2xl text-white block">1,200+</span>
+                            <span class="text-xs text-gray-400">Mamnun Kolleksionerlar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                        <div class="absolute top-4 right-4 z-20 bg-brand-red text-white text-[10px] font-bold font-orbitron px-3 py-1 rounded-full uppercase tracking-wider pulse-glow">
+                            TOP BESTSELLER
+                        </div>
+                        
+                        <!-- Showcase Image -->
+                        <div class="relative h-72 sm:h-80 w-full overflow-hidden rounded-xl flex items-center justify-center bg-black/40">
+                            <img id="hero-showcase-img" src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=800&q=80" alt="Porsche 911 GT3 RS" class="object-contain h-full w-full group-hover:scale-105 transition duration-500">
+                        </div>
+
+                        <!-- Mini Details -->
+                        <div class="mt-6 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Autoart • 1:18</span>
+                                    <h3 class="font-orbitron font-bold text-lg text-white">Porsche 911 GT3 RS</h3>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-gray-400 block line-through">2,800,000 UZS</span>
+                                    <span class="font-orbitron font-bold text-lg text-brand-gold">2,450,000 UZS</span>
+                                </div>
+                            </div>
+                            
+                            <a href="product.html?id=1" class="w-full py-3 bg-white/10 hover:bg-brand-gold hover:text-black font-semibold text-xs text-center rounded-lg transition duration-300 block font-orbitron uppercase">
+                                Xarid Qilish / Ko'rish
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS & SCALE CATEGORIES -->
+    <section class="py-12 border-y border-brand-border/40 bg-brand-card/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-orbitron text-gray-400 uppercase tracking-widest mb-8">
+                Mashhur Kolleksion Masshtablar va Ishlab Chiqaruvchilar
+            </p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <a href="catalog.html?scale=1:18" class="glass-card p-5 rounded-xl text-center group hover:border-brand-gold transition">
+                    <span class="font-orbitron font-bold text-2xl text-white group-hover:text-brand-gold block">1:18</span>
+                    <span class="text-xs text-gray-400">Eksklyuziv Detallashgan</span>
+                </a>
+                <a href="catalog.html?scale=1:24" class="glass-card p-5 rounded-xl text-center group hover:border-brand-gold transition">
+                    <span class="font-orbitron font-bold text-2xl text-white group-hover:text-brand-gold block">1:24</span>
+                    <span class="text-xs text-gray-400">Klassik Kolleksiya</span>
+                </a>
+                <a href="catalog.html?scale=1:43" class="glass-card p-5 rounded-xl text-center group hover:border-brand-gold transition">
+                    <span class="font-orbitron font-bold text-2xl text-white group-hover:text-brand-gold block">1:43</span>
+                    <span class="text-xs text-gray-400">Kompakt & Premium</span>
+                </a>
+                <a href="catalog.html?scale=1:64" class="glass-card p-5 rounded-xl text-center group hover:border-brand-gold transition">
+                    <span class="font-orbitron font-bold text-2xl text-white group-hover:text-brand-gold block">1:64</span>
+                    <span class="text-xs text-gray-400">Hot Wheels & Mini GT</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR PRODUCTS SECTION -->
+    <section class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-brand-gold font-orbitron text-xs uppercase tracking-wider block mb-1">// Tanlangan Modellar</span>
+                    <h2 class="font-orbitron font-black text-3xl sm:text-4xl text-white">TOP BESTSELLERLAR</h2>
+                </div>
+                <a href="catalog.html" class="text-brand-gold hover:text-white font-medium text-sm flex items-center gap-2 group transition">
+                    Barcha modellarni ko'rish <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Javascript Injection Spot -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FEATURED HIGHLIGHT (360 CONCEPT) -->
+    <section class="py-16 bg-gradient-to-b from-transparent via-brand-card/50 to-transparent border-y border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-8 lg:p-12 border border-brand-gold/30 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="bg-brand-gold/20 text-brand-gold border border-brand-gold/40 text-xs font-bold font-orbitron px-3 py-1 rounded-full uppercase">
+                            Premium Diler Kafolati
+                        </span>
+                        <h2 class="font-orbitron font-black text-3xl sm:text-4xl text-white">
+                            Siz Izlayotgan Kamyoob Modelni Telegram Bot Orqali Zakaz Qiling!
+                        </h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Katalogimizda o'zingiz xohlagan modelni topolmadingizmi? Biz Yevropa va Osiyo auksionlaridan Autoart, BBR va Kyosho brendlarining nodir nusxalarini buyurtma bo'yicha yetkazib beramiz.
+                        </p>
+                        <div class="flex items-center gap-4 pt-2">
+                            <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="px-6 py-3.5 bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs uppercase font-orbitron rounded-xl transition flex items-center gap-2">
+                                <i class="fab fa-telegram-plane text-base"></i> Telegram Botga Yozish
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 flex justify-center">
+                        <div class="relative w-full max-w-md h-72 bg-black/60 rounded-2xl flex items-center justify-center p-4 border border-brand-border">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Special Car Model" class="object-contain max-h-full rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-black/80 px-3 py-1.5 rounded-lg border border-white/10 text-[11px] text-gray-300">
+                                <i class="fas fa-box text-brand-gold mr-1"></i> Maxsus Qadoqlash & Yetkazish
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-sm border-t border-brand-border/60 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-brand-border/40">
+                
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-gold flex items-center justify-center text-black font-orbitron font-black text-lg">
+                            MCC
+                        </div>
+                        <span class="font-orbitron font-black text-lg text-white">MINICAR<span class="text-brand-gold">.UZ</span></span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        O'zbekistondagi eksklyuziv kolleksion model mashinalar platformasi. Premium sifat va rasmiy kafolat.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-sky-400 hover:border-brand-gold transition">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-pink-500 hover:border-brand-gold transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="font-orbitron font-bold text-white text-xs uppercase tracking-wider mb-4">Navigatsiya</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-brand-gold transition">Bosh sahifa</a></li>
+                        <li><a href="catalog.html" class="hover:text-brand-gold transition">Model Katalogi</a></li>
+                        <li><a href="about.html" class="hover:text-brand-gold transition">Biz haqimizda</a></li>
+                        <li><a href="cart.html" class="hover:text-brand-gold transition">Savat va Buyurtma</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Scales -->
+                <div>
+                    <h4 class="font-orbitron font-bold text-white text-xs uppercase tracking-wider mb-4">Masshtablar</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="catalog.html?scale=1:18" class="hover:text-brand-gold transition">1:18 Masshtab</a></li>
+                        <li><a href="catalog.html?scale=1:24" class="hover:text-brand-gold transition">1:24 Masshtab</a></li>
+                        <li><a href="catalog.html?scale=1:43" class="hover:text-brand-gold transition">1:43 Masshtab</a></li>
+                        <li><a href="catalog.html?scale=1:64" class="hover:text-brand-gold transition">1:64 Masshtab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contacts -->
+                <div>
+                    <h4 class="font-orbitron font-bold text-white text-xs uppercase tracking-wider mb-4">Aloqa & Telegram</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-center gap-2">
+                            <i class="fab fa-telegram text-sky-400 text-sm"></i>
+                            <a href="https://t.me/MiniCarCollectionUz" target="_blank" class="hover:text-brand-gold transition">@MiniCarCollectionUz</a>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-brand-gold text-sm"></i>
+                            Toshkent sh., O'zbekiston
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-400">
+                            <i class="fas fa-shield-alt text-emerald-400 text-sm"></i>
+                            100% Sifat Kafolati
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 MiniCarCollectionUz. Barcha huquqlar himoyalangan.</p>
+                <p>Designed for Collectors & Enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Sample Products Database
+        const sampleProducts = [
+            {
+                id: 1,
+                name: "Porsche 911 GT3 RS",
+                brand: "Autoart",
+                scale: "1:18",
+                price: 2450000,
+                oldPrice: 2800000,
+                image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=800&q=80",
+                stock: 2,
+                badge: "Top Sale"
+            },
+            {
+                id: 2,
+                name: "Lamborghini Aventador SVJ",
+                brand: "Kyosho",
+                scale: "1:18",
+                price: 3100000,
+                oldPrice: 3500000,
+                image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80",
+                stock: 1,
+                badge: "Rare"
+            },
+            {
+                id: 3,
+                name: "Ferrari F40 Rosso Corsa",
+                brand: "BBR Models",
+                scale: "1:18",
+                price: 4200000,
+                oldPrice: 4600000,
+                image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+                stock: 3,
+                badge: "Limited"
+            },
+            {
+                id: 4,
+                name: "Nissan GT-R R35 Nismo",
+                brand: "MakeUp Co.",
+                scale: "1:43",
+                price: 1850000,
+                oldPrice: 2100000,
+                image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+                stock: 4,
+                badge: "Hot"
+            }
+        ];
+
+        // Format Money
+        function formatMoney(amount) {
+            return amount.toLocaleString('uz-UZ') + " UZS";
+        }
+
+        // Render Bestsellers
+        function renderProducts() {
+            const container = document.getElementById('products-grid');
+            if(!container) return;
+
+            container.innerHTML = sampleProducts.map(p => `
+                <div class="glass-card rounded-2xl p-5 relative flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 w-full rounded-xl overflow-hidden bg-black/40 mb-4 flex items-center justify-center">
+                            <span class="absolute top-2 left-2 z-10 bg-brand-gold text-black text-[10px] font-bold font-orbitron px-2.5 py-0.5 rounded">
+                                ${p.badge}
+                            </span>
+                            <img src="${p.image}" alt="${p.name}" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                            <span class="text-brand-gold font-semibold uppercase">${p.brand}</span>
+                            <span class="bg-white/10 px-2 py-0.5 rounded font-orbitron text-[10px]">${p.scale}</span>
+                        </div>
+
+                        <h3 class="font-orbitron font-bold text-white text-sm mb-2 line-clamp-1 group-hover:text-brand-gold transition">
+                            ${p.name}
+                        </h3>
+                    </div>
+
+                    <div class="pt-4 border-t border-brand-border/40 mt-2">
+                        <div class="mb-3">
+                            <span class="text-xs text-gray-400 line-through block">${formatMoney(p.oldPrice)}</span>
+                            <span class="font-orbitron font-bold text-base text-brand-gold">${formatMoney(p.price)}</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="product.html?id=${p.id}" class="py-2.5 bg-white/5 hover:bg-white/10 text-white font-medium text-xs text-center rounded-lg transition font-orbitron">
+                                Tafsilot
+                            </a>
+                            <button onclick="addToCart(${p.id})" class="py-2.5 bg-brand-gold hover:bg-yellow-600 text-black font-bold text-xs rounded-lg transition font-orbitron flex items-center justify-center gap-1">
+                                <i class="fas fa-cart-plus"></i> Savatga
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Cart State Management
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('mcc_cart') || '[]');
+            const badge = document.getElementById('cart-badge');
+            if(badge) {
+                const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+                badge.innerText = totalCount;
+            }
+        }
+
+        function addToCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('mcc_cart') || '[]');
+            const product = sampleProducts.find(p => p.id === productId);
+
+            if(product) {
+                const existingIndex = cart.findIndex(item => item.id === productId);
+                if(existingIndex > -1) {
+                    cart[existingIndex].quantity += 1;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                localStorage.setItem('mcc_cart', JSON.stringify(cart));
+                updateCartBadge();
+                alert(`"${product.name}" savatga qo'shildi!`);
+            }
+        }
+
+        // Initialize on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartBadge();
+        });
+    </script>
+</body>
+</html>
